@@ -18,13 +18,29 @@ class SearchPage extends StatelessWidget {
                         Expanded(
                           flex: 4,
                           child: Container(
-                            color: backgroundColor,
+                            color: whiteColor,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: lightGreyColor.withOpacity(0.4),
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(60),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                         Expanded(
                           flex: 6,
                           child: Container(
-                            color: whiteColor,
+                            color: lightGreyColor.withOpacity(0.4),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: whiteColor,
+                                borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(60),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ],
@@ -32,7 +48,7 @@ class SearchPage extends StatelessWidget {
                 Expanded(
                   flex: 7,
                   child: Container(
-                    color: backgroundColor,
+                    color: lightGreyColor.withOpacity(0.4),
                   ),
                 ),
               ],
@@ -57,13 +73,12 @@ class SearchPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(25),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(10),
+                            padding: EdgeInsets.fromLTRB(20, 5, 20, 0),
                             child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Icon(
                                   Icons.search,
-                                  size: 30,
+                                  size: 25,
                                   color: darkBlueColor,
                                 ),
                                 SizedBox(
@@ -76,6 +91,11 @@ class SearchPage extends StatelessWidget {
                                     color: darkBlueColor,
                                   ),
                                 ),
+                                Container(
+                                  height: 17,
+                                  width: 1,
+                                  color: darkBlueColor,
+                                )
                               ],
                             ),
                           ),
@@ -160,7 +180,10 @@ class SearchPage extends StatelessWidget {
                               ),
                             ),
                           ),
-                        )
+                        ),
+                        SizedBox(
+                          height: defaultMargin,
+                        ),
                       ],
                     )),
               ],
