@@ -21,7 +21,7 @@ class PopularMovieCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 279,
+      height: 285,
       width: 300,
       child: Column(
         children: [

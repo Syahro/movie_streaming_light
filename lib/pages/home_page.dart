@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:movie_streaming_light/pages/search_page.dart';
 import 'package:movie_streaming_light/theme.dart';
 import 'package:movie_streaming_light/widget/popular_movie_card.dart';
-import 'package:movie_streaming_light/widget/star.dart';
 import 'package:movie_streaming_light/widget/sugestion_movie_card.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundColor,
       body: SafeArea(
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -43,10 +44,18 @@ class HomePage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Icon(
-                        Icons.search,
-                        color: Colors.black,
-                        size: 30,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return SearchPage();
+                          }));
+                        },
+                        child: Icon(
+                          Icons.search,
+                          color: Colors.black,
+                          size: 30,
+                        ),
                       ),
                     ],
                   ),
